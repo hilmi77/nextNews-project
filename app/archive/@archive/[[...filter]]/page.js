@@ -1,9 +1,13 @@
-import { getAvailableNewsYears } from "@/lib/news";
+import NewsList from "@/components/news-list";
+import { getAvailableNewsYears, getNewsForYear } from "@/lib/news";
 import Link from "next/link";
-import React from "react";
 
-const ArchivePage = () => {
+const FilteredNewsPage = ({ params }) => {
+  const filter = params.filter;
+  console.log(filter);
+
   const links = getAvailableNewsYears();
+
   return (
     <header id="archive-header">
       <nav>
@@ -17,6 +21,9 @@ const ArchivePage = () => {
       </nav>
     </header>
   );
+  // const news = getNewsForYear(yearSlug);
+
+  // return <NewsList news={news} />;
 };
 
-export default ArchivePage;
+export default FilteredNewsPage;
