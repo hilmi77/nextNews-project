@@ -1,4 +1,3 @@
-import NewsList from "@/components/news-list";
 import { getAvailableNewsYears, getNewsForYear } from "@/lib/news";
 import Link from "next/link";
 
